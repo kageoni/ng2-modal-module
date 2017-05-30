@@ -1,8 +1,8 @@
 {
   "name": "ng2-modal-module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "bootstrap modal component adjusted for angular2! framework based on rx-pubsub service. NO jQuery!",
-  "main": "./src/modal.module.ts",
+  "main": "./inde.ts",
   "typings": "./index.d.ts",
   "scripts": {},
   "repository": {
