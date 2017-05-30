@@ -1,5 +1,5 @@
-// Type definitions for modal-module
-// Project: modal-module
+// Type definitions for ng2-modal-module
+// Project: ng2-modal-module
 // Definitions by: tomsa.md
 
 export { ModalModule } from './src/modal.module';
