@@ -1,4 +1,4 @@
-modal-module
+ng2-modal-module
 =====
 1. [Description](#description)
 2. [Installation](#installation)
@@ -10,7 +10,7 @@ modal-module
 8. [Version](#version)
 
 ### <a name="description"></a>1. Description
-`modal-module` or `ModalModule` is a module for angular2 which exposes the bootstrap modal component (no jQuery required!!!) 
+`ng2-modal-module` or `ModalModule` is a module for angular2 which exposes the bootstrap modal component (no jQuery required!!!) 
 with the service `ModalWindowService` which makes the component usage easier.  
 It is based on [rx-pubsub](https://www.npmjs.com/package/rx-pubsub).  
   
@@ -18,14 +18,14 @@ It is based on [rx-pubsub](https://www.npmjs.com/package/rx-pubsub).
 Install the module into your application and save it as a dev 
 dependency in your `package.json` file  
 ```
-npm install modal-module --save-dev
+npm install ng2-modal-module --save-dev
 ```
 
 ### <a name="usage"></a>3. Usage
 In order to use the `RxPubSub` service you have to include/import 
 it into your application:
 ```
-import {ModalModule} from "modal-module";
+import {ModalModule} from "ng2-modal-module";
 ```
   
 Add the module into the app's module `imports` section:
