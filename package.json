@@ -1,0 +1,69 @@
+{
+  "name": "modal-module",
+  "version": "0.0.1",
+  "description": "bootstrap modal component adjusted for angular2! framework based on rx-pubsub service. NO jQuery!",
+  "main": "./src/modal.module.ts",
+  "typings": "./index.d.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kageoni/modal-module.git"
+  },
+  "keywords": [
+    "modal",
+    "window",
+    "alert",
+    "bootstrap",
+    "module",
+    "modal-window",
+    "alert-window",
+    "angular",
+    "angular2",
+    "ng2",
+    "service"
+  ],
+  "author": {
+    "name": "kageoni",
+    "email": "kageoni@md.md",
+    "url": "https://github.com/kageoni"
+  },
+  "contributors": [
+    {
+      "name": "Sergiu Tomsa",
+      "email": "sergiu@tomsa.md"
+    },
+    {
+      "name": "Victor Tomsa",
+      "email": "tv@tomsa.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kageoni/modal-module/blob/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/kageoni/modal-module/issues"
+  },
+  "homepage": "https://github.com/kageoni/modal-module",
+  "devDependencies": {
+    "@types/jasmine": "2.5.38",
+    "@types/node": "~6.0.60",
+    "ts-node": "~2.0.0",
+    "tslint": "~4.5.0",
+    "typescript": "~2.2.0"
+  },
+  "dependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "bootstrap": "^3.3.7",
+    "component-injector": "^0.0.5",
+    "rx-pubsub": "^0.0.11",
+    "rxjs": "^5.1.0",
+    "smart-extend": "^1.6.0",
+    "trust-html-pipe": "^0.0.2",
+    "xdom-util": "^0.0.1",
+    "zone.js": "^0.8.4"
+  }
+}
