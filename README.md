@@ -30,6 +30,8 @@ import {ModalModule} from "ng2-modal-module";
   
 Add the module into the app's module `imports` section:
 ```typescript
+import { ModalModule } from "ng2-modal-module";
+
 @NgModule({
   //...
   imports: [
@@ -48,6 +50,8 @@ where `modalId` is a unique ID of the modal component.
 
 Call the modal component (display or hide it) using the `ModalWindowService`:
 ```typescript
+import { ModalWindowService } from "ng2-modal-module"
+
 export class AppComponent {  
   modalId: string = 'modalId';  
   
@@ -122,6 +126,8 @@ Method returns nothing - `void`.
 ### <a name="examples"></a>6. Examples
 Before using the `ModalWindowComponent` don't forget to inject the `ModalWindowService` as a dependency into the component/service constructor:
 ```typescript
+import { ModalWindowService } from "ng2-modal-module"
+//...
 modalId: string = 'test-modal-window';  
 constructor(private pubsub: RxPubSub, private modal: ModalWindowService) {}
 ```
@@ -231,8 +237,8 @@ this.modal.hideModal(this.modalId);
   
   
 ### <a name="git"></a>7. Git repository
-[https://github.com/t0w5a/rx-pubsub](https://github.com/t0w5a/rx-pubsub)
+[https://github.com/kageoni/ng2-modal-module](https://github.com/kageoni/ng2-modal-module)
   
   
 ### <a name="version"></a>8. Version
-0.0.2
+0.0.3

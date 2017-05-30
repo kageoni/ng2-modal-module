@@ -1,13 +1,13 @@
 {
   "name": "ng2-modal-module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "bootstrap modal component adjusted for angular2! framework based on rx-pubsub service. NO jQuery!",
   "main": "./inde.ts",
   "typings": "./index.d.ts",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:kageoni/modal-module.git"
+    "url": "git@github.com:kageoni/ng2-modal-module.git"
   },
   "keywords": [
     "modal",
@@ -40,13 +40,13 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/kageoni/modal-module/blob/master/LICENSE"
+      "url": "https://github.com/kageoni/ng2-modal-module/blob/master/LICENSE"
     }
   ],
   "bugs": {
-    "url": "https://github.com/kageoni/modal-module/issues"
+    "url": "https://github.com/kageoni/ng2-modal-module/issues"
   },
-  "homepage": "https://github.com/kageoni/modal-module",
+  "homepage": "https://github.com/kageoni/ng2-modal-module",
   "devDependencies": {
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
