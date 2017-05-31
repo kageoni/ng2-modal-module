@@ -20,6 +20,8 @@ dependency in your `package.json` file
 ```
 npm install ng2-modal-module --save-dev
 ```
+  
+**WARNIGNG** Don't forget to include the bootstrap styles!
 
 ### <a name="usage"></a>3. Usage
 In order to use the `RxPubSub` service you have to include/import 
@@ -241,4 +243,4 @@ this.modal.hideModal(this.modalId);
   
   
 ### <a name="version"></a>8. Version
-0.0.4
+0.0.5
