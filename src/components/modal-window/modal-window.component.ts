@@ -4,12 +4,12 @@ import {
 } from '@angular/core';
 import { RxPubSub } from "rx-pubsub";
 import { Subscription } from "rxjs/Subscription";
-import * as extend from 'smart-extend';
 import { XDomUtil } from "xdom-util";
 import { ComponentInjector } from "component-injector";
+var extend = require('smart-extend');
 
 @Component({
-  selector: 'app-modal-window',
+  selector: 'ng2-modal-window',
   templateUrl: './modal-window.component.html',
   styleUrls: ['./modal-window.component.css']
 })
@@ -21,19 +21,6 @@ export class ModalWindowComponent implements OnInit, OnDestroy {
   protected bodyOpenModalClass: string = 'modal-open';
   protected eventSubscriber: Subscription;
   protected injectedComponentRef: ComponentRef<any>;
-  protected defaultButtonsProperties: any = {
-    visible: true,
-    cancel: {
-      visible: true,
-      label: 'Cancel',
-      event: false
-    },
-    success: {
-      visible: true,
-      label: 'Save',
-      event: false
-    }
-  }
   protected defaultProperties: any = {
     title: '',
     show: false,
