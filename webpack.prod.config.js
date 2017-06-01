@@ -4,7 +4,7 @@ var webpack = require('webpack'),
 var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
-    entry: './index.ts',
+    entry: './src/modal.module.ts',
     output: {
         // export itself to a global var
         libraryTarget: 'umd',
@@ -41,7 +41,8 @@ module.exports = {
     ],
     module: {
         loaders: [
-            {test: /\.ts$/, loader: 'ts', exclude: 'node_modules'}
+            {test: /\.ts$/, loader: 'ts', exclude: 'node_modules'},
+            { test: /\.(css|html)$/, loader: "file" }
         ]
     }
 }

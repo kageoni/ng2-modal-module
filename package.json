@@ -1,8 +1,8 @@
 {
   "name": "ng2-modal-module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "bootstrap modal component adjusted for angular2! framework based on rx-pubsub service. NO jQuery!",
-  "main": "./dist/ng2-modal-module.min.js",
+  "main": "./index.ts",
   "typings": "./index.d.ts",
   "scripts": {
     "start": "webpack --config webpack.config.js && webpack-dev-server",
@@ -58,6 +58,7 @@
     "@types/node": "^6.0.52",
     "@types/uuid": "^2.0.29",
     "compression-webpack-plugin": "^0.4.0",
+    "file-loader": "^0.11.1",
     "istanbul-instrumenter-loader": "^1.1.0",
     "jasmine-ajax": "^3.3.1",
     "jasmine-core": "^2.5.2",
@@ -79,14 +80,14 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "@angular/common": "^2.3.1",
-    "@angular/core": "^2.3.1",
+    "@angular/common": ">=2.3.1",
+    "@angular/core": ">=2.3.1",
     "bootstrap": "^3.3.7",
-    "component-injector": "^0.0.6",
-    "rx-pubsub": "^0.1.0",
-    "rxjs": "^5.1.0",
+    "component-injector": ">=0.0.9",
+    "rx-pubsub": ">=0.1.0",
+    "rxjs": "^5.3.0",
     "smart-extend": "^1.6.0",
-    "trust-html-pipe": "^0.0.3",
+    "trust-html-pipe": "^0.0.4",
     "xdom-util": "^0.0.1",
     "zone.js": "^0.7.2"
   }
