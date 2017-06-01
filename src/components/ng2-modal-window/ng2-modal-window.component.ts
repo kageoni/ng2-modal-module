@@ -6,7 +6,7 @@ import { RxPubSub } from "rx-pubsub";
 import { Subscription } from "rxjs/Subscription";
 import { XDomUtil } from "xdom-util";
 import { ComponentInjector } from "component-injector";
-var extend = require('smart-extend');
+  import * as merge from 'merge';
 
 @Component({
   selector: 'ng2-modal-window',
@@ -176,7 +176,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
   }
 
   private setProperties(properties: any): void {
-    this.properties = extend.deep({}, this.defaultProperties, properties);
+    this.properties = merge.recursive(true, this.defaultProperties, properties);
   }
 
   private resetModalEventSubscriber(): void {
