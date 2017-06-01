@@ -3,7 +3,7 @@ ng2-modal-module
 1. [Description](#description)
 2. [Installation](#installation)
 3. [Usage](#usage)
-4. [ModalWindowService Methods](#methods)
+4. [Ng2ModalWindowService Methods](#methods)
 5. [ModalWindow Options](#options)
 6. [Examples](#examples)
 7. [Git repository](#git)
@@ -46,18 +46,18 @@ import { ModalModule } from 'ng2-modal-module';
   
 Include the `modal` component into your template:
 ```angular2html
-<app-modal-window id="{{modalId}}"></app-modal-window>
+<ng2-modal-window id="{{modalId}}"></ng2-modal-window>
 ```
 where `modalId` is a unique ID of the modal component.
 
-Call the modal component (display or hide it) using the `ModalWindowService`:
+Call the modal component (display or hide it) using the `Ng2ModalWindowService`:
 ```typescript
-import { ModalWindowService } from 'ng2-modal-module'
+import { Ng2ModalWindowService } from 'ng2-modal-module'
 
 export class AppComponent {  
   modalId: string = 'modalId';  
   
-  constructor(private modal: ModalWindowService) {  
+  constructor(private modal: Ng2ModalWindowService) {  
   }  
   
   displayModal() {  
@@ -70,10 +70,10 @@ export class AppComponent {
 ```
   
   
-### <a name="methods"></a>4. ModalWindowService Methods
+### <a name="methods"></a>4. Ng2ModalWindowService Methods
 
 #### showModal(modalId: string, options: any = {}): void
-Display the `ModalWindowComponent`  
+Display the `Ng2ModalWindowComponent`  
   
 *Parameters:*  
 **modalId** - Id of the modal window which should be displayed  
@@ -85,7 +85,7 @@ Method returns nothing - `void`.
   
   
 #### hideModal(modalId: string): void
-Hide the `ModalWindowComponent`  
+Hide the `Ng2ModalWindowComponent`  
   
 *Parameters:*  
 **modalId** - Id of the modal window which should be hidden  
@@ -95,7 +95,7 @@ Method returns nothing - `void`.
   
   
 #### resetEventsSubscribers(eventsList: any[]): void
-Reset (remove) the events subscribers of the `ModalWindowComponent` 
+Reset (remove) the events subscribers of the `Ng2ModalWindowComponent` 
 actions buttons if such events are provided using the `options` parameter.  
   
 *Parameters:*  
@@ -126,12 +126,12 @@ Method returns nothing - `void`.
   
   
 ### <a name="examples"></a>6. Examples
-Before using the `ModalWindowComponent` don't forget to inject the `ModalWindowService` as a dependency into the component/service constructor:
+Before using the `Ng2ModalWindowComponent` don't forget to inject the `Ng2ModalWindowService` as a dependency into the component/service constructor:
 ```typescript
-import { ModalWindowService } from 'ng2-modal-module'
+import { Ng2ModalWindowService } from 'ng2-modal-module'
 //...
 modalId: string = 'test-modal-window';  
-constructor(private pubsub: RxPubSub, private modal: ModalWindowService) {}
+constructor(private pubsub: RxPubSub, private modal: Ng2ModalWindowService) {}
 ```
   
 `RxPubSub` service will be required when you'll try to listen the click events of the `cancel` and `success` buttons.  
@@ -243,4 +243,4 @@ this.modal.hideModal(this.modalId);
   
   
 ### <a name="version"></a>8. Version
-0.1.3
+0.1.4

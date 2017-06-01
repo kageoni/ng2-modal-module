@@ -3,7 +3,7 @@
 // Definitions by: tomsa.md
 
 export { ModalModule } from './src/modal.module';
-export { ModalWindowService } from './src/services/modal-window.service';
-export { ModalWindowComponent } from './src/components/modal-window/modal-window.component';
+export { Ng2ModalWindowService } from './src/services/ng2-modal-window.service';
+export { Ng2ModalWindowComponent } from './src/components/ng2-modal-window/ng2-modal-window.component';
 
 

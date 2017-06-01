@@ -4,19 +4,19 @@ import { CommonModule } from '@angular/common';
 import { RxPubSub } from "rx-pubsub";
 import { TrustHtmlPipe } from "trust-html-pipe";
 import { ComponentInjector } from "component-injector";
-import { ModalWindowComponent } from './components/modal-window/modal-window.component';
-import { ModalWindowService } from "./services/modal-window.service";
+import { Ng2ModalWindowComponent } from './components/ng2-modal-window/ng2-modal-window.component';
+import { Ng2ModalWindowService } from "./services/ng2-modal-window.service";
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    ModalWindowComponent,
+    Ng2ModalWindowComponent,
     TrustHtmlPipe
   ],
-  providers: [RxPubSub, ModalWindowService, ComponentInjector],
-  exports: [ModalWindowComponent]
+  providers: [RxPubSub, Ng2ModalWindowService, ComponentInjector],
+  exports: [Ng2ModalWindowComponent]
 })
 export class ModalModule {
 }

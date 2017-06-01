@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { RxPubSub } from "rx-pubsub";
 
 @Injectable()
-export class ModalWindowService {
+export class Ng2ModalWindowService {
 
   constructor(protected pubsub: RxPubSub) {
   }

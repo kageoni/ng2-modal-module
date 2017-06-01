@@ -10,10 +10,10 @@ var extend = require('smart-extend');
 
 @Component({
   selector: 'ng2-modal-window',
-  templateUrl: './modal-window.component.html',
-  styleUrls: ['./modal-window.component.css']
+  templateUrl: './ng2-modal-window.component.html',
+  styleUrls: ['./ng2-modal-window.component.css']
 })
-export class ModalWindowComponent implements OnInit, OnDestroy {
+export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
   @ViewChild('modalWindow') modalWindow: ElementRef;
   @ViewChild('injectContainer', {read: ViewContainerRef}) injectContainer: ViewContainerRef;
   @Input() animationClass: string = 'fade';
