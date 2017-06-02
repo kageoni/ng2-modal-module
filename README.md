@@ -12,7 +12,7 @@ ng2-modal-module
 ### <a name="description"></a>1. Description
 `ng2-modal-module` or `ModalModule` is a module for angular2 which exposes the bootstrap modal component (no jQuery required!!!) 
 with the service `ModalWindowService` which makes the component usage easier.  
-It is based on [rx-pubsub](https://www.npmjs.com/package/rx-pubsub).  
+It is based on [pubsub-distinct](https://www.npmjs.com/package/pubsub-distinct).  
   
 ### <a name="installation"></a>2. Installation
 Install the module into your application and save it as a dev 
@@ -24,7 +24,7 @@ npm install ng2-modal-module --save-dev
 **WARNIGNG** Don't forget to include the bootstrap styles!
 
 ### <a name="usage"></a>3. Usage
-In order to use the `RxPubSub` service you have to include/import 
+In order to use the `Ng2ModalWindowService` service you have to include/import 
 it into your application:
 ```
 import {ModalModule} from 'ng2-modal-module';
@@ -119,10 +119,10 @@ Method returns nothing - `void`.
 | buttons.visible         | Boolean | true     | Display or hide the footer section with the action buttons (cancel/success). `true` -  buttons are visible `false` - buttons are hidden                             | {buttons: {visible: false}} // hide buttons                          |
 | buttons.cancel.visible  | Boolean | true     | Display or hide the `cancel` button `true` - button is visible `false` - button is hidden                                                                           | {buttons:  {cancel: {visible: false}}} // hide cancel button         |
 | buttons.cancel.label    | String  | 'Cancel' | Label of the `cancel` button                                                                                                                                        | {buttons: {cancel: {label: 'Close'}}}                                |
-| buttons.cancel.event    | String  | NULL     | Name of the event which will be triggered (using rx-pubsub) when the `cancel` button is clicked                                                                     | {buttons: {cancel: {event: 'cancel-event'}}}                         |
+| buttons.cancel.event    | String  | NULL     | Name of the event which will be triggered (using pubsub-distinct) when the `cancel` button is clicked                                                                     | {buttons: {cancel: {event: 'cancel-event'}}}                         |
 | buttons.success.visible | Boolean | true     | Display or hide the `success` button `true` - button is visible `false` - button is hidden                                                                          | {buttons: {success: {visible: false}}} // hide success button        |
 | buttons.success.label   | String  | 'Save'   | Label of the `success` button                                                                                                                                       | {buttons: {success: {label: 'Save changes'}}}                        |
-| buttons.success.event   | String  | NULL     | Name of the event which will be triggered (using rx-pubsub) when the `success` button is clicked                                                                    | {buttons: {cancel: {event: 'success-event'}}}                        |
+| buttons.success.event   | String  | NULL     | Name of the event which will be triggered (using pubsub-distinct) when the `success` button is clicked                                                                    | {buttons: {cancel: {event: 'success-event'}}}                        |
   
   
 ### <a name="examples"></a>6. Examples
@@ -243,4 +243,4 @@ this.modal.hideModal(this.modalId);
   
   
 ### <a name="version"></a>8. Version
-0.1.11
+0.1.12
