@@ -2,7 +2,7 @@ import {
     Component, ComponentRef, ElementRef, Input, OnDestroy, OnInit, ViewChild,
     ViewContainerRef
 } from '@angular/core';
-import { RxPubSub } from "rx-pubsub";
+import { PubSubDistinct } from "pubsub-distinct";
 import { Subscription } from "rxjs/Subscription";
 import { XDomUtil } from "xdom-util";
 import { ComponentInjector } from "component-injector";
@@ -48,7 +48,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
     properties: any = {};
     protected eventName: string;
 
-    constructor(protected pubsub: RxPubSub, protected componentInjector: ComponentInjector) {
+    constructor(protected pubsub: PubSubDistinct, protected componentInjector: ComponentInjector) {
     }
 
     @Input() set id(eventName: string) {

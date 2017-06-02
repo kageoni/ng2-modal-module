@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RxPubSub } from "rx-pubsub";
+import { PubSubDistinct } from "pubsub-distinct";
 import { PipesModule } from 'pipes-module';
 import { ComponentInjector } from "component-injector";
 import { Ng2ModalWindowComponent } from './components/ng2-modal-window/ng2-modal-window.component';
@@ -15,7 +15,7 @@ import { Ng2ModalWindowService } from "./services/ng2-modal-window.service";
   declarations: [
     Ng2ModalWindowComponent
   ],
-  providers: [RxPubSub, Ng2ModalWindowService, ComponentInjector],
+  providers: [PubSubDistinct, Ng2ModalWindowService, ComponentInjector],
   exports: [Ng2ModalWindowComponent]
 })
 export class ModalModule {

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { RxPubSub } from "rx-pubsub";
+import { PubSubDistinct } from "pubsub-distinct";
 
 @Injectable()
 export class Ng2ModalWindowService {
 
-  constructor(protected pubsub: RxPubSub) {
+  constructor(protected pubsub: PubSubDistinct) {
   }
 
   showModal(modalId: string, options: any = {}): void {
