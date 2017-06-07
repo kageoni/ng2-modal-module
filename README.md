@@ -115,6 +115,7 @@ Method returns nothing - `void`.
 | htmlContent             | String  | Empty    | The HTML content which should be injected in the modal's body as innerHTML content (HTML tags are not escaped!)                                                     | {htmlContent: '&lt;strong&gt;test content&lt;/strong&gt;'}                       |
 | overlayClick            | Boolean | true     | Enable/disable the click over the modal's overlay. If it's `true` then the click over the overlay hides/closes the modal window.                                    | {overlayClick: false} // disable the overlay click                   |
 | show                    | Boolean | NULL     | Forcibly shows/display the modal window if its value is `true`                                                                                                      | {show: true}                                                         |
+| showEvent               | String  | NULL     | Name of the event which will be triggered when the modal window is displayed                                                                                        | {show: true}                                                         |
 | title                   | String  | Empty    | Title of the modal window                                                                                                                                           | {title: 'Modal window title'}                                        |
 | buttons.visible         | Boolean | true     | Display or hide the footer section with the action buttons (cancel/success). `true` -  buttons are visible `false` - buttons are hidden                             | {buttons: {visible: false}} // hide buttons                          |
 | buttons.cancel.visible  | Boolean | true     | Display or hide the `cancel` button `true` - button is visible `false` - button is hidden                                                                           | {buttons:  {cancel: {visible: false}}} // hide cancel button         |
@@ -243,4 +244,4 @@ this.modal.hideModal(this.modalId);
   
   
 ### <a name="version"></a>8. Version
-0.1.13
+0.1.14

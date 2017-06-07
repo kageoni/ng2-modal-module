@@ -25,6 +25,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
     protected defaultProperties: any = {
         title: '',
         show: false,
+        showEvent: false,
         hide: false,
         componentSelector: false,
         componentInputs: false,
@@ -101,6 +102,10 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
         let body = document.querySelector('body');
         if (!XDomUtil.hasClass(body, this.bodyOpenModalClass)) {
             XDomUtil.addClass(body, this.bodyOpenModalClass);
+        }
+
+        if (this.properties.showEvent) {
+            this.pubsub.publish(this.properties.showEvent, true);
         }
     }
 
