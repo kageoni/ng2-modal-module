@@ -6,8 +6,7 @@ import { PubSubDistinct } from 'pubsub-distinct';
 import { Subscription } from 'rxjs/Subscription';
 import { XDomUtil } from 'xdom-util';
 import { ComponentInjector } from 'component-injector';
-declare var require: any;
-var extend = require('smart-extend');
+import * as deepExtend from 'deep-extend';
 
 @Component({
   selector: 'ng2-modal-window',
@@ -182,7 +181,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
   }
 
   private setProperties(properties: any): void {
-    this.properties = extend.deep({}, this.defaultProperties, properties);
+    this.properties = deepExtend({}, this.defaultProperties, properties);
   }
 
   private resetModalEventSubscriber(): void {
