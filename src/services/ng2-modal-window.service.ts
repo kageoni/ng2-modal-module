@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PubSubDistinct } from "pubsub-distinct";
+import { PubSubDistinct } from 'pubsub-distinct';
 
 @Injectable()
 export class Ng2ModalWindowService {

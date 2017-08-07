@@ -1,6 +1,6 @@
 {
   "name": "ng2-modal-module",
-  "version": "0.1.16",
+  "version": "0.2.0",
   "description": "bootstrap modal component adjusted for angular2! framework based on rx-pubsub service. NO jQuery!",
   "main": "./index.ts",
   "typings": "./index.d.ts",
@@ -74,22 +74,21 @@
     "ts-loader": "^1.2.2",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
-    "typescript": "~2.2.0",
+    "typescript": "~2.3.3",
     "uuid": "^3.0.0",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "@angular/common": ">=2.3.1",
-    "@angular/core": ">=2.3.1",
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0",
     "bootstrap": "^3.3.7",
-    "component-injector": "^0.0.9",
-    "merge": "^1.2.0",
+    "component-injector": "^0.0.10",
     "pipes-module": "^0.0.5",
-    "pubsub-distinct": "^0.1.1",
-    "rxjs": "^5.1.0",
-    "smart-extend": "^1.6.0",
+    "pubsub-distinct": "^0.1.2",
+    "rxjs": "^5.4.1",
+    "smart-extend": "^1.7.3",
     "xdom-util": "^0.0.1",
-    "zone.js": "^0.7.2"
+    "zone.js": "^0.8.14"
   }
 }
