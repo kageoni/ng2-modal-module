@@ -244,4 +244,4 @@ this.modal.hideModal(this.modalId);
   
   
 ### <a name="version"></a>8. Version
-0.2.1
+0.2.2
