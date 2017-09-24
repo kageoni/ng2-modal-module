@@ -70,14 +70,14 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
 
   cancelAction(): void {
     if (this.properties.buttons.cancel.event) {
-      this.pubsub.publish(this.properties.buttons.cancel.event, true);
+      PubSubDistinct.publish(this.properties.buttons.cancel.event, true);
     }
     this.hide();
   }
 
   successAction(): void {
     if (this.properties.buttons.success.event) {
-      this.pubsub.publish(this.properties.buttons.success.event, true);
+      PubSubDistinct.publish(this.properties.buttons.success.event, true);
     }
     else {
       this.hide();
@@ -104,7 +104,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
     }
 
     if (this.properties.showEvent) {
-      this.pubsub.publish(this.properties.showEvent, true);
+      PubSubDistinct.publish(this.properties.showEvent, true);
     }
   }
 
@@ -118,7 +118,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
 
 
   protected subscribeToEvent(): void {
-    this.eventSubscriber = this.pubsub.subscribe(this.eventName, (data: any) => {
+    this.eventSubscriber = PubSubDistinct.subscribe(this.eventName, (data: any) => {
       this.initModal(data);
     });
   }
@@ -154,7 +154,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
 
   protected unsubscribe(): void {
     if (this.eventSubscriber) {
-      this.pubsub.unsubscribe(this.eventSubscriber);
+      PubSubDistinct.unsubscribe(this.eventSubscriber);
     }
   }
 
@@ -186,7 +186,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
 
   private resetModalEventSubscriber(): void {
     // reset modal show/hide display
-    this.pubsub.publish(this.eventName, {});
+    PubSubDistinct.publish(this.eventName, {});
   }
 
 }

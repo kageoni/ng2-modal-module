@@ -129,13 +129,15 @@ Method returns nothing - `void`.
 ### <a name="examples"></a>6. Examples
 Before using the `Ng2ModalWindowComponent` don't forget to inject the `Ng2ModalWindowService` as a dependency into the component/service constructor:
 ```typescript
-import { Ng2ModalWindowService } from 'ng2-modal-module'
+import { Ng2ModalWindowService } from 'ng2-modal-module';
+import { PubSubDistinct } from 'pubsub-distinct';
+
 //...
 modalId: string = 'test-modal-window';  
-constructor(private pubsub: RxPubSub, private modal: Ng2ModalWindowService) {}
+constructor(private modal: Ng2ModalWindowService) {}
 ```
   
-`RxPubSub` service will be required when you'll try to listen the click events of the `cancel` and `success` buttons.  
+`PubSubDistinct` service will be required when you'll try to listen the click events of the `cancel` and `success` buttons.  
   
 1. display simple modal window:
 ```typescript
@@ -218,12 +220,12 @@ this.modal.showModal(this.modalId, {
 });  
   
 // subscribe to events 
-this.pubsub.subscribe(successEventName, (data) => {  
+PubSubDistinct.subscribe(successEventName, (data) => {  
   console.log('successEventName triggered!', data);  
   // hide modal  
   this.modal.hideModal(this.modalId);  
 });  
-this.pubsub.subscribe(cancelEventName, (data) => {  
+PubSubDistinct.subscribe(cancelEventName, (data) => {  
   console.log('cancelEventName triggered!', data);  
 });
 ```
@@ -244,4 +246,4 @@ this.modal.hideModal(this.modalId);
   
   
 ### <a name="version"></a>8. Version
-0.2.2
+0.3.0

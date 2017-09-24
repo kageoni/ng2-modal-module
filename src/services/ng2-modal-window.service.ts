@@ -10,18 +10,18 @@ export class Ng2ModalWindowService {
   showModal(modalId: string, options: any = {}): void {
     options.show = true;
     options.hide = null;
-    this.pubsub.publish(modalId, options);
+    PubSubDistinct.publish(modalId, options);
   }
 
   hideModal(modalId: string): void {
     let options: any = {hide: true};
-    this.pubsub.publish(modalId, options);
+    PubSubDistinct.publish(modalId, options);
   }
 
   resetEventsSubscribers(eventsList: any[]): void {
     eventsList.forEach((eventName: string) => {
-      if (eventName && this.pubsub.hasSubscribers(eventName)) {
-        this.pubsub.dispose(eventName);
+      if (eventName && PubSubDistinct.hasSubscribers(eventName)) {
+        PubSubDistinct.dispose(eventName);
       }
     });
   }
