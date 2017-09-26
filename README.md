@@ -11,7 +11,7 @@ ng2-modal-module
 
 ### <a name="description"></a>1. Description
 `ng2-modal-module` or `ModalModule` is a module for angular2 which 
-exposes the bootstrap modal component (no jQuery required!!!) 
+exposes the bootstrap (3.3.*) modal component (no jQuery required!!!) 
 with the util class `Ng2ModalWindow` which makes the component usage 
 easier.  
 It is based on [pubsub-distinct](https://www.npmjs.com/package/pubsub-distinct).  
@@ -23,7 +23,7 @@ dependency in your `package.json` file
 npm install ng2-modal-module --save-dev
 ```
   
-**WARNIGNG** Don't forget to include the bootstrap styles!
+**WARNIGNG** Don't forget to include the bootstrap (3.3.*) styles!
 
 ### <a name="usage"></a>3. Usage
 In order to use the `ModalModule` module you have to include/import 
@@ -52,7 +52,7 @@ Include the `modal` component into your template:
 ```
 where `modalId` is a unique ID of the modal component.
 
-Call the modal component (display or hide it) using the `Ng2ModalWindowService`:
+Call the modal component (display or hide it) using the `Ng2ModalWindow` util class:
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { Ng2ModalWindow } from 'ng2-modal-module';
@@ -224,7 +224,7 @@ Ng2ModalWindow.showModal(this.modalId, {
 Ng2ModalWindow.subscribe(successEventName, (data) => {  
   console.log('successEventName triggered!', data);  
   // hide modal  
-  this.modal.hideModal(this.modalId);  
+  Ng2ModalWindow.hideModal(this.modalId); 
 });  
 Ng2ModalWindow.subscribe(cancelEventName, (data) => {  
   console.log('cancelEventName triggered!', data);  
@@ -247,4 +247,4 @@ Ng2ModalWindow.hideModal(this.modalId);
   
   
 ### <a name="version"></a>8. Version
-0.4.0
+0.4.1
