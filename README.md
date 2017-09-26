@@ -3,15 +3,17 @@ ng2-modal-module
 1. [Description](#description)
 2. [Installation](#installation)
 3. [Usage](#usage)
-4. [Ng2ModalWindowService Methods](#methods)
+4. [Ng2ModalWindow static methods](#methods)
 5. [ModalWindow Options](#options)
 6. [Examples](#examples)
 7. [Git repository](#git)
 8. [Version](#version)
 
 ### <a name="description"></a>1. Description
-`ng2-modal-module` or `ModalModule` is a module for angular2 which exposes the bootstrap modal component (no jQuery required!!!) 
-with the service `ModalWindowService` which makes the component usage easier.  
+`ng2-modal-module` or `ModalModule` is a module for angular2 which 
+exposes the bootstrap modal component (no jQuery required!!!) 
+with the util class `Ng2ModalWindow` which makes the component usage 
+easier.  
 It is based on [pubsub-distinct](https://www.npmjs.com/package/pubsub-distinct).  
   
 ### <a name="installation"></a>2. Installation
@@ -24,7 +26,7 @@ npm install ng2-modal-module --save-dev
 **WARNIGNG** Don't forget to include the bootstrap styles!
 
 ### <a name="usage"></a>3. Usage
-In order to use the `Ng2ModalWindowService` service you have to include/import 
+In order to use the `ModalModule` module you have to include/import 
 it into your application:
 ```
 import {ModalModule} from 'ng2-modal-module';
@@ -45,23 +47,24 @@ import { ModalModule } from 'ng2-modal-module';
 ```
   
 Include the `modal` component into your template:
-```angular2html
+```html
 <ng2-modal-window id="{{modalId}}"></ng2-modal-window>
 ```
 where `modalId` is a unique ID of the modal component.
 
 Call the modal component (display or hide it) using the `Ng2ModalWindowService`:
 ```typescript
-import { Ng2ModalWindowService } from 'ng2-modal-module'
+import { Component, OnInit } from '@angular/core';
+import { Ng2ModalWindow } from 'ng2-modal-module';
 
-export class AppComponent {  
+export class AppComponent  implements OnInit {  
   modalId: string = 'modalId';  
   
-  constructor(private modal: Ng2ModalWindowService) {  
+  constructor() {  
   }  
   
-  displayModal() {  
-    this.modal.showModal(this.modalId, {  
+  ngOnInit() {  
+    Ng2ModalWindow.showModal(this.modalId, {  
       title: 'Modal title',  
       htmlContent: 'Modal content'  
     });  
@@ -70,7 +73,7 @@ export class AppComponent {
 ```
   
   
-### <a name="methods"></a>4. Ng2ModalWindowService Methods
+### <a name="methods"></a>4. Ng2ModalWindow static methods
 
 #### showModal(modalId: string, options: any = {}): void
 Display the `Ng2ModalWindowComponent`  
@@ -127,21 +130,19 @@ Method returns nothing - `void`.
   
   
 ### <a name="examples"></a>6. Examples
-Before using the `Ng2ModalWindowComponent` don't forget to inject the `Ng2ModalWindowService` as a dependency into the component/service constructor:
+Before using the `Ng2ModalWindowComponent` don't forget to import the `Ng2ModalWindow` util class into your component/service:
 ```typescript
-import { Ng2ModalWindowService } from 'ng2-modal-module';
-import { PubSubDistinct } from 'pubsub-distinct';
+import { Ng2ModalWindow } from 'ng2-modal-module';
 
 //...
-modalId: string = 'test-modal-window';  
-constructor(private modal: Ng2ModalWindowService) {}
+// define an unique ID for the modal component
+modalId: string = 'test-modal-window';
+//...
 ```
-  
-`PubSubDistinct` service will be required when you'll try to listen the click events of the `cancel` and `success` buttons.  
   
 1. display simple modal window:
 ```typescript
-this.modal.showModal(this.modalId, {
+Ng2ModalWindow.showModal(this.modalId, {
   title: 'Modal title',
   htmlContent: 'Modal content'
 });
@@ -149,7 +150,7 @@ this.modal.showModal(this.modalId, {
 
 2. display modal with the disabled overlay, HTML content and custom class (large modal window)
 ```typescript
-this.modal.showModal(this.modalId, {
+Ng2ModalWindow.showModal(this.modalId, {
   title: 'Modal title',
   htmlContent: '<b>test bold</b> and simple text',
   customClass: 'modal-lg',
@@ -159,7 +160,7 @@ this.modal.showModal(this.modalId, {
   
 3. display modal window without footer (action buttons are hidden).
 ```typescript
-this.modal.showModal(this.modalId, {
+Ng2ModalWindow.showModal(this.modalId, {
   title: 'Modal title',
   htmlContent: 'modal content',
   buttons: {
@@ -170,7 +171,7 @@ this.modal.showModal(this.modalId, {
   
 4. display modal without the success button:
 ```typescript
-this.modal.showModal(this.modalId, {
+Ng2ModalWindow.showModal(this.modalId, {
   title: 'Modal title',
   htmlContent: 'modal content',
   buttons: {
@@ -181,18 +182,18 @@ this.modal.showModal(this.modalId, {
   
 5. inject a custom component into the modal's body/content
 ```typescript
-this.modal.showModal(this.modalId, {
+Ng2ModalWindow.showModal(this.modalId, {
   title: 'Modal title',
   componentSelector: 'app-test'
 });
 ```
-where `app-test` is the selector of the component.  
+where `app-test` is the selector of the component which should be injected in the modal window.  
 **WARNING!** To make it dynamically injectable, the component `app-test`
-should be included in the `entryComponents: []` list of the `@NgModule(...)`;
+should be included in the `entryComponents: []` list of the `@NgModule(...)` of your application module;
   
 6. inject a custom component into the modal's body/content and pass some custom properties to it
 ```typescript
-this.modal.showModal(this.modalId, {
+Ng2ModalWindow.showModal(this.modalId, {
   title: 'Modal title',
   componentSelector: 'app-test',
   componentInputs: {componentTitle: 'CUSTOM TITLE'}
@@ -207,10 +208,10 @@ let successEventName = 'successEvent';
 let cancelEventName = 'cancelEvent';  
   
 // remove previously added subscriber and publisher  
-this.modal.resetEventsSubscribers([successEventName, cancelEventName]);  
+Ng2ModalWindow.resetEventsSubscribers([successEventName, cancelEventName]);  
   
 // pass the events name to the modal window component  
-this.modal.showModal(this.modalId, {  
+Ng2ModalWindow.showModal(this.modalId, {  
   title: 'Modal title',  
   htmlContent: 'listen actions events',  
   buttons: {  
@@ -220,24 +221,24 @@ this.modal.showModal(this.modalId, {
 });  
   
 // subscribe to events 
-PubSubDistinct.subscribe(successEventName, (data) => {  
+Ng2ModalWindow.subscribe(successEventName, (data) => {  
   console.log('successEventName triggered!', data);  
   // hide modal  
   this.modal.hideModal(this.modalId);  
 });  
-PubSubDistinct.subscribe(cancelEventName, (data) => {  
+Ng2ModalWindow.subscribe(cancelEventName, (data) => {  
   console.log('cancelEventName triggered!', data);  
 });
 ```
 Before registering new events listeners, is suggested to remove them if they are already subscribed 
 to the same events:
  ```typescript
-this.modal.resetEventsSubscribers([successEventName, cancelEventName]);
+Ng2ModalWindow.resetEventsSubscribers([successEventName, cancelEventName]);
 ```
   
 8. hide already visible modal window
 ```typescript
-this.modal.hideModal(this.modalId); 
+Ng2ModalWindow.hideModal(this.modalId); 
 ```
   
   
@@ -246,4 +247,4 @@ this.modal.hideModal(this.modalId);
   
   
 ### <a name="version"></a>8. Version
-0.3.0
+0.4.0

@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PipesModule } from 'pipes-module';
 import { ComponentInjector } from 'component-injector';
 import { Ng2ModalWindowComponent } from './components/ng2-modal-window/ng2-modal-window.component';
-import { Ng2ModalWindowService } from './services/ng2-modal-window.service';
-
+import { Ng2ModalWindow } from './util/ng2-modal-window';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,7 +13,7 @@ import { Ng2ModalWindowService } from './services/ng2-modal-window.service';
   declarations: [
     Ng2ModalWindowComponent
   ],
-  providers: [Ng2ModalWindowService, ComponentInjector],
+  providers: [ComponentInjector],
   exports: [Ng2ModalWindowComponent]
 })
 export class ModalModule {

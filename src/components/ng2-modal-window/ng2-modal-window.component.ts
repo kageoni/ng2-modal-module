@@ -48,7 +48,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
   properties: any = {};
   protected eventName: string;
 
-  constructor(protected pubsub: PubSubDistinct, protected componentInjector: ComponentInjector) {
+  constructor(protected componentInjector: ComponentInjector) {
   }
 
   @Input() set id(eventName: string) {
@@ -70,14 +70,14 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
 
   cancelAction(): void {
     if (this.properties.buttons.cancel.event) {
-      PubSubDistinct.publish(this.properties.buttons.cancel.event, true);
+      PubSubDistinct.publishDistinct(this.properties.buttons.cancel.event, true);
     }
     this.hide();
   }
 
   successAction(): void {
     if (this.properties.buttons.success.event) {
-      PubSubDistinct.publish(this.properties.buttons.success.event, true);
+      PubSubDistinct.publishDistinct(this.properties.buttons.success.event, true);
     }
     else {
       this.hide();
@@ -104,7 +104,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
     }
 
     if (this.properties.showEvent) {
-      PubSubDistinct.publish(this.properties.showEvent, true);
+      PubSubDistinct.publishDistinct(this.properties.showEvent, true);
     }
   }
 
@@ -186,7 +186,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
 
   private resetModalEventSubscriber(): void {
     // reset modal show/hide display
-    PubSubDistinct.publish(this.eventName, {});
+    PubSubDistinct.publishDistinct(this.eventName, {});
   }
 
 }
