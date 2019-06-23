@@ -1,0 +1,12 @@
+{
+  "name": "ng2-modal",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.0.1",
+    "@angular/core": "^8.0.1",
+    "component-injector": "^2.0.0",
+    "deep-extend": "^0.6.0",
+    "pubsub-distinct": "^0.2.0",
+    "xdom-util": "0.0.1"
+  }
+}

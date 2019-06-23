@@ -1,0 +1,24 @@
+<div class="ko-modal-window modal"  [ngClass]="animationClass" tabindex="-1" role="dialog" id="myModal" #modalWindow>
+  <div class="ko-modal-overlay" (click)="overlayClick()"></div>
+  <div class="modal-dialog {{properties.customClass}}" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="cancelAction()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">{{properties.title}}</h4>
+      </div>
+      <div class="modal-body">
+        <div #injectContainer [innerHTML]="properties.htmlContent | trustHtml"></div>
+      </div>
+      <div class="modal-footer" *ngIf="properties?.buttons?.visible">
+        <button type="button" class="btn btn-default" (click)="cancelAction()"
+                *ngIf="properties.buttons.cancel?.visible">{{properties.buttons.cancel.label}}
+        </button>
+        <button type="button" class="btn btn-primary" (click)="successAction()"
+                *ngIf="properties.buttons.success?.visible">{{properties.buttons.success.label}}
+        </button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
