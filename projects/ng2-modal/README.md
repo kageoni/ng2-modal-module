@@ -250,14 +250,14 @@ Ng2ModalWindow.hideModal(this.modalId);
 ### <a name="build"></a>8. Build
 To build the final package run this command:
 ```
-ng build pipes
+ng build ng2-modal
 ```
 The build process will generate the packed sources into the `dist` folder.  
 
 ### <a name="publish"></a>9. Publish to npm
 To publish the new version to `npm`, go into the `dist` folder:
 ```
-cd ./dist/pipes
+cd ./dist/ng2-modal
 ```
 and publish it to npm:
 ```

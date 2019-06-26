@@ -7,10 +7,12 @@ ng2-modal-module
 5. [ModalWindow Options](#options)
 6. [Examples](#examples)
 7. [Git repository](#git)
-8. [Version](#version)
+8. [Build](#build)
+9. [Publish to npm](#publish)
+10. [Version](#version)
 
 ### <a name="description"></a>1. Description
-`ng2-modal-module` or `ModalModule` is a module for angular2 which 
+`ng2-modal-module` or `ModalModule` is a module for angular2+ which 
 exposes the bootstrap (3.3.*) modal component (no jQuery required!!!) 
 with the util class `Ng2ModalWindow` which makes the component usage 
 easier.  
@@ -245,6 +247,22 @@ Ng2ModalWindow.hideModal(this.modalId);
 ### <a name="git"></a>7. Git repository
 [https://github.com/kageoni/ng2-modal-module](https://github.com/kageoni/ng2-modal-module)
   
+### <a name="build"></a>8. Build
+To build the final package run this command:
+```
+ng build ng2-modal
+```
+The build process will generate the packed sources into the `dist` folder.  
+
+### <a name="publish"></a>9. Publish to npm
+To publish the new version to `npm`, go into the `dist` folder:
+```
+cd ./dist/ng2-modal
+```
+and publish it to npm:
+```
+npm publish
+```
   
-### <a name="version"></a>8. Version
+### <a name="version"></a>10. Version
 1.0.0
