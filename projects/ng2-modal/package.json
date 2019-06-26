@@ -1,12 +1,46 @@
 {
-  "name": "ng2-modal",
-  "version": "0.0.1",
+  "name": "ng2-modal-module",
+  "version": "1.0.0",
+  "description": "bootstrap modal component adjusted for angular2+ framework based on rx-pubsub service. NO jQuery!",
+  "author": {
+    "name": "kageoni",
+    "email": "kageoni@md.md",
+    "url": "https://github.com/kageoni"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kageoni/ng2-modal-module.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kageoni/ng2-modal-module/blob/master/LICENSE"
+    }
+  ],
+  "keywords": [
+    "modal",
+    "window",
+    "alert",
+    "bootstrap",
+    "module",
+    "modal-window",
+    "alert-window",
+    "angular",
+    "angular2",
+    "ng2",
+    "service"
+  ],
+  "bugs": {
+    "url": "https://github.com/kageoni/ng2-modal-module/issues"
+  },
+  "dependencies": {
+    "component-injector": ">=2.0.0",
+    "pubsub-distinct": ">=0.2.0",
+    "trust-html": ">=1.0.0",
+    "xdom-util": ">=0.0.1"
+  },
   "peerDependencies": {
-    "@angular/common": "^8.0.1",
-    "@angular/core": "^8.0.1",
-    "component-injector": "^2.0.0",
-    "deep-extend": "^0.6.0",
-    "pubsub-distinct": "^0.2.0",
-    "xdom-util": "0.0.1"
+    "@angular/core": ">=2.3.1",
+    "@angular/common": ">=2.3.1"
   }
 }

@@ -9,7 +9,6 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import { ComponentInjector } from 'component-injector';
-import * as deepExtend from 'deep-extend';
 import { PubSubDistinct, Subscription } from 'pubsub-distinct';
 import { XDomUtil } from 'xdom-util';
 
@@ -186,7 +185,7 @@ export class Ng2ModalWindowComponent implements OnInit, OnDestroy {
   }
 
   private setProperties(properties: any): void {
-    this.properties = deepExtend({}, this.defaultProperties, properties);
+    this.properties = {...this.defaultProperties, ...properties};
   }
 
   private resetModalEventSubscriber(): void {
