@@ -3,5 +3,11 @@
   "dest": "../../dist/ng2-modal",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "component-injector",
+    "pubsub-distinct",
+    "trust-html",
+    "xdom-util"
+]
 }
