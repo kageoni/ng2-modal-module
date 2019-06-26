@@ -265,4 +265,4 @@ npm publish
 ```
   
 ### <a name="version"></a>10. Version
-1.0.0
+1.0.1
